@@ -1,3 +1,4 @@
+#include <stdbool.h>
 /*
  * jtime.h - Tools for manipulating Jalali representation of Iranian calendar
  * and necessary conversations to Gregorian calendar.
