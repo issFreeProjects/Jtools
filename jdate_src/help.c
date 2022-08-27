@@ -5,7 +5,7 @@
 void print_help()
 {
     printf("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s",
-        "Using: jdate +FORMAT [-f option]\n",
+        "Usage: jdate +FORMAT [-f option]\n",
         "Jdate - print the system date and time (in Jalali calendar)\n",
         "Display  the current time/jalali date in the given FORMAT\n",
         "use -f option to print digits using farsi characters.\n\n"
