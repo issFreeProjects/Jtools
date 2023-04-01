@@ -1,7 +1,7 @@
-add_library(libjalali SHARED
+add_library(jalali SHARED
     src/jalali.c
     src/jtime.c)
 
-set_target_properties(libjalali PROPERTIES VERSION 1.1)
+set_target_properties(jalali PROPERTIES VERSION 1.1)
 
-target_include_directories(libjalali PUBLIC include)
+target_include_directories(jalali PUBLIC include)

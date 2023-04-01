@@ -19,14 +19,15 @@ make
 echo "make is done"
 
 echo "installing libjalali library..."
-cp libjalali/liblibjalali.so.* $LIBDIR
-if [[ -f $LIBDIR/liblibjalali.so ]]; then
-    unlink $LIBDIR/liblibjalali.so
+cp libjalali/libjalali.so.* $LIBDIR
+if [[ -f $LIBDIR/libjalali.so ]]; then
+    unlink $LIBDIR/libjalali.so
 fi
-ln -s $LIBDIR/liblibjalali.so.* $LIBDIR/liblibjalali.so
+ln -s $LIBDIR/libjalali.so.* $LIBDIR/libjalali.so
 
 echo "installing executable binary..."
 cp jdate $BINDIR
+cp jcal $BINDIR
 
 cd ../
 echo "\nDone!"

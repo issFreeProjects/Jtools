@@ -6,7 +6,7 @@ add_subdirectory(libjalali)
 
 
 add_executable(jdate jdate_src/help.c jdate_src/main.c)
-target_link_libraries(jdate libjalali)
+target_link_libraries(jdate jalali)
 
 add_executable(jcal jcal_src/jcal.c)
-target_link_libraries(jcal libjalali)
+target_link_libraries(jcal jalali)
