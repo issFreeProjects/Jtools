@@ -1,6 +1,11 @@
 #!/bin/bash
 #
-
+#   installer script
+#
+#   you can change BINDIR to install jdate and jcal tools locally,
+#   (BINDIR="$HOME/.local/bin" or ...)
+#
+#
 LIBDIR="/lib/"
 BINDIR="/usr/bin/"
 
