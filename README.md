@@ -1,6 +1,5 @@
 # Jtools
-this is my modified version of the jdate and jcal tools,
-
+this is my modified version of the jdate and jcal tools
 together with the libjalali library
 
 
