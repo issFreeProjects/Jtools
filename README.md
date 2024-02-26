@@ -3,7 +3,7 @@ this is my modified version of the jdate and jcal tools,
 together with the libjalali library
 
 
-# Compile
+# Compilation
 run `mkdir build && cd build`
 then `cmake ..` and `make`
 
