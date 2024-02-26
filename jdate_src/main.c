@@ -26,7 +26,7 @@ static void jprintf_H(const char *format, const char flag, const bool farsi)
             is_ascii = false;
             break;
         }
-isascii(4);
+
     if(is_ascii || !(isnumber(format[1])))
         printf(format, buf);
     else{
