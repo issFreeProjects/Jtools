@@ -7,7 +7,7 @@
 
 #include "help.h"
 
-#define isnumber(i) i-'0'<=9 && i-'0'>=0
+#define isnumber(i) ((i)-'0'<=9 && (i)-'0'>=0)
 #define isascii(c) ((c)>127 || (c)<0) // c is char
 #define farsi_digit_option "-f"
 
@@ -28,7 +28,7 @@ static void jprintf_H(const char *format, const char flag, const bool farsi)
             break;
         }
 
-    if(is_ascii || !(isnumber(format[1])))
+    if(is_ascii || !isnumber(format[1]))
         printf(format, buf);
     else{
         // handle non-ascii buf and %ns as format
