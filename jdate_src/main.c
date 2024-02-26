@@ -8,6 +8,7 @@
 #include "help.h"
 
 #define isnumber(i) i-'0'<=9 && i-'0'>=0
+#define isascii(c) ((c)>127 || (c)<0) // c is char
 #define farsi_digit_option "-f"
 
 
@@ -22,7 +23,7 @@ static void jprintf_H(const char *format, const char flag, const bool farsi)
     parse_jstr_flag(buf, MAX_BUF_SIZE, flag, &j, farsi);
 
     for(const char *p = buf; *p != '\0'; ++p)
-        if(*p > 127 || *p < 0){
+        if(isascii(*p)){
             is_ascii = false;
             break;
         }
