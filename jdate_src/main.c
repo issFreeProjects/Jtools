@@ -17,10 +17,35 @@ static struct jtm j = {0};
 static void jprintf_H(const char *format, const char flag, const bool farsi)
 {
     char buf[MAX_BUF_SIZE];
+    bool is_ascii = true;
 
     parse_jstr_flag(buf, MAX_BUF_SIZE, flag, &j, farsi);
 
-    printf(format, buf);
+    for(const char *p = buf; *p != '\0'; ++p)
+        if(*p > 127 || *p < 0){
+            is_ascii = false;
+            break;
+        }
+isascii(4);
+    if(is_ascii || !(isnumber(format[1])))
+        printf(format, buf);
+    else{
+        // handle non-ascii buf and %ns as format
+        // suppose each non-ascii char is 2 bytes
+        int padd, padd_end_idx;
+        char new_format[MAX_BUF_SIZE];
+        const char *p = format + 1;
+
+        sscanf(p, "%d%n", &padd, &padd_end_idx);
+        p += padd_end_idx;
+        padd += strlen(buf)/2;
+
+        if(format[1]=='0')
+            sprintf(new_format, "%%0%d%s", padd, p);
+        else sprintf(new_format, "%%%d%s", padd, p);
+
+        printf(new_format, buf);
+    }
 }
 
 
